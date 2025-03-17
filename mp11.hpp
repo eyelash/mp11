@@ -238,6 +238,8 @@ constexpr auto operator +(Values<T, x...>, Values<T, y...>)
 
 template <std::size_t... I>
 using Indices = Values<std::size_t, I...>;
+template <int... I>
+using Ints = Values<int, I...>;
 
 }
 

@@ -14,3 +14,4 @@
 | `mp11::False`   | `std::false_type`               |
 | `mp11::True`    | `std::true_type`                |
 | `mp11::Indices` | `std::index_sequence` (C++14)   |
+| `mp11::Ints`    | -                               |
