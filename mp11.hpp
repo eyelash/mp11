@@ -38,112 +38,112 @@ public:
 };
 
 // arithmetic operators for Value
-template <class T, class U, T t, U u>
-constexpr auto operator +(Value<T, t>, Value<U, u>)
--> Value<decltype(t + u), (t + u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator +(Value<T, x>, Value<U, y>)
+-> Value<decltype(x + y), (x + y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator -(Value<T, t>, Value<U, u>)
--> Value<decltype(t - u), (t - u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator -(Value<T, x>, Value<U, y>)
+-> Value<decltype(x - y), (x - y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator *(Value<T, t>, Value<U, u>)
--> Value<decltype(t * u), (t * u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator *(Value<T, x>, Value<U, y>)
+-> Value<decltype(x * y), (x * y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator /(Value<T, t>, Value<U, u>)
--> Value<decltype(t / u), (t / u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator /(Value<T, x>, Value<U, y>)
+-> Value<decltype(x / y), (x / y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator %(Value<T, t>, Value<U, u>)
--> Value<decltype(t % u), (t % u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator %(Value<T, x>, Value<U, y>)
+-> Value<decltype(x % y), (x % y)> {
 	return {};
 }
 
 // relational operators for Value
-template <class T, class U, T t, U u>
-constexpr auto operator ==(Value<T, t>, Value<U, u>)
--> Value<decltype(t == u), (t == u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator ==(Value<T, x>, Value<U, y>)
+-> Value<decltype(x == y), (x == y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator !=(Value<T, t>, Value<U, u>)
--> Value<decltype(t != u), (t != u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator !=(Value<T, x>, Value<U, y>)
+-> Value<decltype(x != y), (x != y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator <(Value<T, t>, Value<U, u>)
--> Value<decltype(t < u), (t < u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator <(Value<T, x>, Value<U, y>)
+-> Value<decltype(x < y), (x < y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator >(Value<T, t>, Value<U, u>)
--> Value<decltype(t > u), (t > u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator >(Value<T, x>, Value<U, y>)
+-> Value<decltype(x > y), (x > y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator <=(Value<T, t>, Value<U, u>)
--> Value<decltype(t <= u), (t <= u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator <=(Value<T, x>, Value<U, y>)
+-> Value<decltype(x <= y), (x <= y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator >=(Value<T, t>, Value<U, u>)
--> Value<decltype(t >= u), (t >= u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator >=(Value<T, x>, Value<U, y>)
+-> Value<decltype(x >= y), (x >= y)> {
 	return {};
 }
 
 // logical operators for Value
-template <class T, class U, T t, U u>
-constexpr auto operator &&(Value<T, t>, Value<U, u>)
--> Value<decltype(t && u), (t && u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator &&(Value<T, x>, Value<U, y>)
+-> Value<decltype(x && y), (x && y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator ||(Value<T, t>, Value<U, u>)
--> Value<decltype(t || u), (t || u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator ||(Value<T, x>, Value<U, y>)
+-> Value<decltype(x || y), (x || y)> {
 	return {};
 }
-template <class T, T t>
-constexpr auto operator !(Value<T, t>)
--> Value<decltype(!t), (!t)> {
+template <class T, T x>
+constexpr auto operator !(Value<T, x>)
+-> Value<decltype(!x), (!x)> {
 	return {};
 }
 
 // bitwise operators for Value
-template <class T, class U, T t, U u>
-constexpr auto operator &(Value<T, t>, Value<U, u>)
--> Value<decltype(t & u), (t & u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator &(Value<T, x>, Value<U, y>)
+-> Value<decltype(x & y), (x & y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator |(Value<T, t>, Value<U, u>)
--> Value<decltype(t | u), (t | u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator |(Value<T, x>, Value<U, y>)
+-> Value<decltype(x | y), (x | y)> {
 	return {};
 }
-template <class T, class U, T t, U u>
-constexpr auto operator ^(Value<T, t>, Value<U, u>)
--> Value<decltype(t ^ u), (t ^ u)> {
+template <class T, class U, T x, U y>
+constexpr auto operator ^(Value<T, x>, Value<U, y>)
+-> Value<decltype(x ^ y), (x ^ y)> {
 	return {};
 }
-template <class T, T t>
-constexpr auto operator ~(Value<T, t>)
--> Value<decltype(~t), (~t)> {
+template <class T, T x>
+constexpr auto operator ~(Value<T, x>)
+-> Value<decltype(~x), (~x)> {
 	return {};
 }
 
 // decrement and increment
-template <class T, T t>
-constexpr auto dec(Value<T, t>)
--> Value<T, (t - 1)> {
+template <class T, T x>
+constexpr auto dec(Value<T, x>)
+-> Value<T, (x - 1)> {
 	return {};
 }
-template <class T, T t>
-constexpr auto inc(Value<T, t>)
--> Value<T, (t + 1)> {
+template <class T, T x>
+constexpr auto inc(Value<T, x>)
+-> Value<T, (x + 1)> {
 	return {};
 }
 
