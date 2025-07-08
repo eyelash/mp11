@@ -37,6 +37,27 @@ public:
 	}
 };
 
+template <std::size_t I>
+using Index = Value<std::size_t, I>;
+template <int I>
+using Int = Value<int, I>;
+template <bool B>
+using Bool = Value<bool, B>;
+using False = Bool<false>;
+using True = Bool<true>;
+
+// operators for Type
+template <class T, class U>
+constexpr auto operator ==(Type<T>, Type<U>)
+-> False {
+	return {};
+}
+template <class T>
+constexpr auto operator ==(Type<T>, Type<T>)
+-> True {
+	return {};
+}
+
 // arithmetic operators for Value
 template <class T, class U, T x, U y>
 constexpr auto operator +(Value<T, x>, Value<U, y>)
@@ -147,15 +168,6 @@ constexpr auto inc(Value<T, x>)
 	return {};
 }
 
-template <std::size_t I>
-using Index = Value<std::size_t, I>;
-template <int I>
-using Int = Value<int, I>;
-template <bool B>
-using Bool = Value<bool, B>;
-using False = Bool<false>;
-using True = Bool<true>;
-
 template <class... T>
 class Types;
 
@@ -205,12 +217,6 @@ public:
 	}
 };
 
-template <class... T, class... U>
-constexpr auto operator +(Types<T...>, Types<U...>)
--> Types<T..., U...> {
-	return {};
-}
-
 template <class T, T... V> class Values {
 public:
 	using types = Types<Value<T, V>...>;
@@ -230,16 +236,44 @@ public:
 	}
 };
 
+template <std::size_t... I>
+using Indices = Values<std::size_t, I...>;
+template <int... I>
+using Ints = Values<int, I...>;
+
+// operators for Types
+template <class... T, class... U>
+constexpr auto operator ==(Types<T...>, Types<U...>)
+-> False {
+	return {};
+}
+template <class... T>
+constexpr auto operator ==(Types<T...>, Types<T...>)
+-> True {
+	return {};
+}
+template <class... T, class... U>
+constexpr auto operator +(Types<T...>, Types<U...>)
+-> Types<T..., U...> {
+	return {};
+}
+
+// operators for Values
+template <class T, class U, T... x, U... y>
+constexpr auto operator ==(Values<T, x...>, Values<U, y...>)
+-> False {
+	return {};
+}
+template <class T, T... x>
+constexpr auto operator ==(Values<T, x...>, Values<T, x...>)
+-> True {
+	return {};
+}
 template <class T, T... x, T... y>
 constexpr auto operator +(Values<T, x...>, Values<T, y...>)
 -> Values<T, x..., y...> {
 	return {};
 }
-
-template <std::size_t... I>
-using Indices = Values<std::size_t, I...>;
-template <int... I>
-using Ints = Values<int, I...>;
 
 }
 
