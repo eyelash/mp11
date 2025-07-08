@@ -197,8 +197,9 @@ template <class... T>
 class Types {
 public:
 	constexpr Types() {}
-	constexpr std::size_t size() const {
-		return sizeof...(T);
+	constexpr auto size() const
+	-> Index<sizeof...(T)> {
+		return {};
 	}
 	template <std::size_t I>
 	constexpr auto operator [](Index<I>) const
@@ -221,8 +222,9 @@ template <class T, T... V> class Values {
 public:
 	using types = Types<Value<T, V>...>;
 	constexpr Values() {}
-	constexpr std::size_t size() const {
-		return sizeof...(V);
+	constexpr auto size() const
+	-> Index<sizeof...(V)> {
+		return {};
 	}
 	template <std::size_t I>
 	constexpr auto operator [](Index<I>) const
